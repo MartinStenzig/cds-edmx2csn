@@ -1,11 +1,12 @@
 {
   "name": "edmx2csn",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Package and command line tool to convert EDMX to SAP CSN",
   "main": "index.js",
   "directories": {
     "lib": "lib"
   },
+  "bin": "bin/cli.js",
   "scripts": {
     "test": "npm run lint && mocha",
     "start": "node index.js",

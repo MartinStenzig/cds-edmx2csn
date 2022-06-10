@@ -2,10 +2,15 @@
 
 [![npm version](https://badge.fury.io/js/edmx2csn.svg)](https://badge.fury.io/js/edmx2csn)
 [![npm downloads](https://img.shields.io/npm/dm/edmx2csn)](https://www.npmjs.com/package/edmx2csn)
+![GitHub CodeQL Check](https://github.com/MartinStenzig/cds-edmx2csn/actions/workflows/codeql-analysis.yml/badge.svg)
 
 This tool allows for easy conversion of EDMX to the SAP CSN format. 
 
 It can be use as a) node package or as b) command line tool.
+
+The project is completely relying on the [SAP CAP](https://cap.cloud.sap/) functionality at its core and therefore please consider any and all licensing implications.
+
+[ReleaseNotes](./ReleaseNotes.md)
 
 ## Use as node package
 To install and use the package as part of your node project, run the following command: 

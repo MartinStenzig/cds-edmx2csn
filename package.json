@@ -1,0 +1,44 @@
+{
+  "name": "edmx2csn",
+  "version": "1.0.0",
+  "description": "Package and command line tool to convert EDMX to SAP CSN",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "npm run lint && mocha",
+    "start": "node index.js",
+    "lint": "eslint --ext .js lib/** bin/**"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MartinStenzig/cds-edmx2csn.git"
+  },
+  "keywords": [
+    "SAP",
+    "CAP",
+    "CSN",
+    "EDMX"
+  ],
+  "author": "martin@stenzig.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MartinStenzig/cds-edmx2csn/issues"
+  },
+  "homepage": "https://github.com/MartinStenzig/cds-edmx2csn#readme",
+  "dependencies": {
+    "@sap/cds-dk": "^4.9.7",
+    "deep-object-diff": "^1.1.7",
+    "node-fetch": "^2.6.7",
+    "yargs": "^17.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.17.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.2",
+    "eslint-plugin-promise": "^6.0.0",
+    "mocha": "^10.0.0"
+  }
+}

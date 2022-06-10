@@ -1,0 +1,50 @@
+name: Build and Test
+
+on:
+  push:
+    branches: 
+      - main 
+  pull_request:
+    branches: 
+      - main 
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+
+  build_and_test:
+    # The type of runner that the job will run on
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node: [14, 16]
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+
+      - name: Printout variables
+        run: echo ${{ github.event_name }}
+
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Uses a Node.js environment in version 12
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+
+      # Install dependencies
+      - name: Install NPM dependencies
+        run: npm ci
+
+      # Execute Build Process 
+      - name: Run Build
+        run: npm run build --if-present
+
+      # Test the version
+      - name: Test Version
+        run: npm test
